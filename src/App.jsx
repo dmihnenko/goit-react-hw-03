@@ -10,7 +10,6 @@ export default function App() {
   const [filter, setFilter] = useState("");
 
   const addContact = (newContact) => {
-    console.log("newContact", newContact);
     setContact((prevContact) => {
       return [...prevContact, newContact];
     });
