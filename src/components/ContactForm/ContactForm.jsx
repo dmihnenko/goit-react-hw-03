@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { nanoid } from "nanoid";
-import css from "../ContactForm/ContactForm.module.css";
+import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 
 export default function ContactCofrm({ onAdd }) {

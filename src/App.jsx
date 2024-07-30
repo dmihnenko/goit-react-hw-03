@@ -1,9 +1,9 @@
 import data from "./data.json";
 import css from "./App.module.css";
 // import FormOld from "./ContactFormOld/ContactForm";
-import Form from "./ContactForm/ContactForm";
-import ContactList from "./ContactList/ContactList";
-import SearchBox from "./SearchBox/SearchBox";
+import Form from "./components/ContactForm/ContactForm";
+import ContactList from "./components/ContactList/ContactList";
+import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect, useState } from "react";
 
 export default function App() {

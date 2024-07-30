@@ -1,4 +1,4 @@
-import css from "../ContactFormOld/ContactForm.module.css";
+import css from "./ContactForm.module.css";
 import { nanoid } from "nanoid";
 
 export default function Form({ onAdd }) {
