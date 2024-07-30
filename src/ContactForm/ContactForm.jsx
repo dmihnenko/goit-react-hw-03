@@ -19,10 +19,10 @@ export default function ContactCofrm({ onAdd }) {
       .max(50, "Too Long!")
       .required("Required"),
     number: Yup.string()
-      .required("required")
-      .matches(phoneRegExp, "Phone number is not valid")
-      .min(7, "too short")
-      .max(10, "too long"),
+      .required("Required")
+      .matches(phoneRegExp, "Phone number is not valid!")
+      .min(7, "Too Short!")
+      .max(10, "Too Long!"),
   });
 
   const handleSubmit = (values, actions) => {
