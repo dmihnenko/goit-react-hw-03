@@ -15,14 +15,14 @@ export default function ContactCofrm({ onAdd }) {
 
   const ContactSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, "Too Short!")
+      .min(3, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
     number: Yup.string()
       .required("Required")
       .matches(phoneRegExp, "Phone number is not valid!")
-      .min(7, "Too Short!")
-      .max(10, "Too Long!"),
+      .min(3, "Too Short!")
+      .max(50, "Too Long!"),
   });
 
   const handleSubmit = (values, actions) => {
