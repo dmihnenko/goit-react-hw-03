@@ -1,13 +1,26 @@
 import data from "./data.json";
 import css from "./App.module.css";
+// import FormOld from "./ContactFormOld/ContactForm";
 import Form from "./ContactForm/ContactForm";
 import ContactList from "./ContactList/ContactList";
 import SearchBox from "./SearchBox/SearchBox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const [contacts, setContact] = useState(data);
+  const [contacts, setContact] = useState(() => {
+    const savedContacts = localStorage.getItem("contacts");
+
+    if (savedContacts !== null) {
+      return JSON.parse(savedContacts);
+    }
+    return data;
+  });
+
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts), [contacts]);
+  });
 
   const addContact = (newContact) => {
     setContact((prevContact) => {
@@ -27,7 +40,8 @@ export default function App() {
 
   return (
     <div className={css.wrapper}>
-      <Form onAdd={addContact} />
+      <Form onAdd={addContact}></Form>
+      {/* <FormOld onAdd={addContact} /> */}
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList items={visibleContact} onDelete={deleteContact} />
     </div>

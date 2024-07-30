@@ -3,9 +3,7 @@
   border-radius: 4px;
   font-weight: bold;
   padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   gap: 12px;
 }
 li {
